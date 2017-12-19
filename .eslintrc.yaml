@@ -1,0 +1,25 @@
+root: true
+parser: babel-eslint
+parserOptions:
+  sourceType: module
+extends: airbnb-base
+settings:
+  import/resolver: webpack
+rules:
+  prefer-destructuring: off
+  import/prefer-default-export: off
+  indent:
+  - error
+  - tab
+  no-tabs: off
+  arrow-parens:
+  - error
+  - as-needed
+  no-plusplus: off
+  space-unary-ops:
+  - error
+  - words: true
+    nonwords: false
+    overrides:
+      "!": true
+      "!!": true

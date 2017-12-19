@@ -1,0 +1,95 @@
+{
+  "name": "griptape",
+  "author": {
+    "name": "J. Cameron McDonald",
+    "email": "cameronhimself@gmail.com"
+  },
+  "version": "0.1.0",
+  "description": "Beautiful dynamic background patterns.",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/griptape.node.js",
+  "keywords": [
+    "patterns",
+    "pattern",
+    "backgrounds",
+    "background",
+    "canvas"
+  ],
+  "scripts": {
+    "test": "mocha-webpack --webpack-config webpack.test.config.js \"src/**/*.js\" \"test/**/*.spec.js\"",
+    "test-browser": "karma start --single-run",
+    "test-all": "npm run test && npm run test-browser",
+    "test-watch": "mocha-webpack --watch --reporter=min --webpack-config webpack.test.config.js \"src/**/*.js\" \"test/**/*.spec.js\"",
+    "coverage": "cross-env NODE_ENV=coverage nyc --reporter=lcov --reporter=text npm run test",
+    "build": "webpack",
+    "serve": "live-server --watch=build,demo --mount=/:demo --mount=/dist:dist",
+    "demo": "concurrently -k -p \"[{name}]\" -n \"BUILD,HTTP\" -c \"bgMagenta,bgCyan\" \"webpack --watch\" \"npm run serve\"",
+    "lint": "eslint src test"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/createCanvasBrowser.js"
+    ],
+    "instrument": false,
+    "sourceMap": false
+  },
+  "dependencies": {
+    "canvas": "^1.6.9",
+    "color-string": "^1.5.2",
+    "core-js": "^2.5.3",
+    "extend": "^3.0.1",
+    "seed-random": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-istanbul": "^4.1.5",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "concurrently": "^3.5.1",
+    "cross-env": "^5.1.3",
+    "eslint": "^4.12.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-plugin-import": "^2.8.0",
+    "istanbul": "^0.4.5",
+    "istanbul-instrumenter-loader": "^3.0.0",
+    "karma": "^1.7.1",
+    "karma-babel-preprocessor": "^7.0.0",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-webpack": "^2.0.9",
+    "live-server": "^1.2.0",
+    "mocha": "^4.0.1",
+    "mocha-webpack": "^1.0.1",
+    "node-loader": "^0.6.0",
+    "nyc": "^11.4.1",
+    "phantomjs-prebuilt": "^2.1.16",
+    "uglifyjs-webpack-plugin": "^1.1.5",
+    "watch": "^1.0.2",
+    "webpack": "^3.10.0",
+    "webpack-merge": "^4.1.1",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "peerDependencies": {
+    "canvas": "^1.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camsong/babel-npm-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/camsong/babel-npm-boilerplate/issues"
+  },
+  "homepage": "https://github.com/camsong/babel-npm-boilerplate#readme",
+  "license": "MIT"
+}

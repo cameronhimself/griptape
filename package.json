@@ -18,6 +18,7 @@
     "canvas"
   ],
   "scripts": {
+    "prepack": "npm run build",
     "test": "mocha-webpack --webpack-config webpack.test.config.js \"src/**/*.js\" \"test/**/*.spec.js\"",
     "test-browser": "karma start --single-run",
     "test-all": "npm run test && npm run test-browser",

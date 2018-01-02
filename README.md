@@ -1,6 +1,8 @@
 # griptape
 
 [![npm](https://img.shields.io/npm/v/griptape.svg) ![npm](https://img.shields.io/npm/dm/griptape.svg)](https://www.npmjs.com/package/griptape)
+[![travis](https://img.shields.io/travis/cameronhimself/griptape.svg)](https://travis-ci.org/cameronhimself/griptape)
+[![coveralls](https://img.shields.io/coveralls/github/cameronhimself/griptape.svg)](https://coveralls.io/github/cameronhimself/griptape)
 
 > Beautiful dynamic background patterns. Inspired by [Toptal's Subtle Patterns](https://www.toptal.com/designers/subtlepatterns/).
 

@@ -9,5 +9,5 @@ install:
   - npm install canvas
 script:
   - npm run lint
-  - npm run test-all
   - npm run build
+  - npm run test-all

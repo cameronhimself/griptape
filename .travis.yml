@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "8"
+before_install:
+  - export NODE_ENV=production
+script:
+  - npm run lint
+  - npm run test-all
+  - npm run build

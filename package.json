@@ -4,7 +4,7 @@
     "name": "J. Cameron McDonald",
     "email": "cameronhimself@gmail.com"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Beautiful dynamic background patterns.",
   "files": [
     "dist"
@@ -87,11 +87,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/camsong/babel-npm-boilerplate.git"
+    "url": "git+https://github.com/cameronhimself/griptape.git"
   },
   "bugs": {
-    "url": "https://github.com/camsong/babel-npm-boilerplate/issues"
+    "url": "https://github.com/cameronhimself/griptape/issues"
   },
-  "homepage": "https://github.com/camsong/babel-npm-boilerplate#readme",
+  "homepage": "https://github.com/cameronhimself/griptape",
   "license": "MIT"
 }

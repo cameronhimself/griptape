@@ -39,7 +39,6 @@
     "sourceMap": false
   },
   "dependencies": {
-    "canvas": "^1.6.9",
     "color-string": "^1.5.2",
     "core-js": "^2.5.3",
     "extend": "^3.0.1",

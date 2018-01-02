@@ -27,6 +27,12 @@ const pattern = patterns
   .dots();
 ```
 
+## Installation
+
+For usage server-side, this package requires [`node-canvas`](https://www.npmjs.com/package/canvas), which has has some OS-specific build requirements. Take a look at their [documentation](https://github.com/Automattic/node-canvas/wiki/_pages).
+
+For the browser, however, `node-canvas` is not required, since we'll be using the browser's native canvas. For that reason, `node-canvas` is a peer dependency--it won't be installed unless you install it explicitly. So if you only need `griptape` in the browser, `npm install griptape` is all you need to do.
+
 ## Patterns
 
 All patterns support the following options, unless otherwise noted:

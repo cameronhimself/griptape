@@ -10,5 +10,5 @@ install:
 script:
   - npm run build
   - npm run lint
-  - npm run test-all
+  - npm run test-browser
   - npm run coveralls

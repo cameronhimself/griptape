@@ -77,7 +77,6 @@
     "uglifyjs-webpack-plugin": "^1.1.5",
     "watch": "^1.0.2",
     "webpack": "^3.10.0",
-    "webpack-merge": "^4.1.1",
     "webpack-node-externals": "^1.6.0"
   },
   "peerDependencies": {

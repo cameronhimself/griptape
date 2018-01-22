@@ -20,7 +20,7 @@ function assertIsWrappedPattern(obj) {
 
 	assert.isFunction(obj.toCSSURL, 'CSS URL function is not a function');
 	assert.isString(obj.toCSSURL(), 'CSS URL is not a string');
-	assert.match(obj.toCSSURL(), /url\("data:image\/png;base64/, 'CSS URL is invalid');
+	assert.match(obj.toCSSURL(), /url\('data:image\/png;base64/, 'CSS URL is invalid');
 }
 
 describe('patternWrapper', () => {

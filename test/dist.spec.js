@@ -61,7 +61,7 @@ describe('built griptape', () => {
 		patternObjs.forEach(pattern => {
 			assert.isFunction(pattern.toCSSURL, 'CSS URL function is not a function');
 			assert.isString(pattern.toCSSURL(), 'CSS URL is not a string');
-			assert.match(pattern.toCSSURL(), /url\("data:image\/png;base64/, 'CSS URL is invalid');
+			assert.match(pattern.toCSSURL(), /url\('data:image\/png;base64/, 'CSS URL is invalid');
 		});
 	});
 });

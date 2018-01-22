@@ -30,7 +30,7 @@ function patternWrapper({ canvas, patterns }) {
 			return this.canvas.toDataURL();
 		},
 		toCSSURL() {
-			return `url("${this.toDataURL()}")`;
+			return `url('${this.toDataURL()}')`;
 		},
 	});
 }

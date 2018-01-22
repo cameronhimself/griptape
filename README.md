@@ -15,8 +15,8 @@ const pattern = griptape
   .grid({ foreground: 'rgba(255, 0, 0, 0.5' }); // Draw a  red grid
   .noise(); // And some subtle noise below it
 
-pattern.toDataURL(); // 'data:image/png;base64...'
-pattern.toCSSURL();  // 'url("data:image/png;base64..."'
+pattern.toDataURL(); // "data:image/png;base64..."
+pattern.toCSSURL();  // "url('data:image/png;base64...'"
 pattern.canvas;      // HTML5 canvas in browser, or an instance of node-canvas on the server.
 ```
 ```javascript

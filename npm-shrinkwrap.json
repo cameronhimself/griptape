@@ -1,6 +1,6 @@
 {
   "name": "griptape",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "lockfileVersion": 1,
   "requires": true,
   "dependencies": {
@@ -1520,6 +1520,15 @@
       "resolved": "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30000778.tgz",
       "integrity": "sha1-8efLixOx9nREAikddfC81MMWA2k=",
       "dev": true
+    },
+    "canvas": {
+      "version": "1.6.9",
+      "resolved": "https://registry.npmjs.org/canvas/-/canvas-1.6.9.tgz",
+      "integrity": "sha1-4/lc7HsWvy1vP8clwC2UDTJY9ps=",
+      "optional": true,
+      "requires": {
+        "nan": "2.8.0"
+      }
     },
     "caseless": {
       "version": "0.12.0",
@@ -4804,6 +4813,11 @@
         "is-extglob": "1.0.0"
       }
     },
+    "is-node": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/is-node/-/is-node-1.0.2.tgz",
+      "integrity": "sha1-19ACdF733ru3R36YiVarCk/MtlM="
+    },
     "is-number": {
       "version": "2.1.0",
       "resolved": "https://registry.npmjs.org/is-number/-/is-number-2.1.0.tgz",
@@ -6289,7 +6303,6 @@
       "version": "2.8.0",
       "resolved": "https://registry.npmjs.org/nan/-/nan-2.8.0.tgz",
       "integrity": "sha1-7XFfP+neArV6XmJS2QqWZ14fCFo=",
-      "dev": true,
       "optional": true
     },
     "natural-compare": {

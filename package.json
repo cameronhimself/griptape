@@ -9,7 +9,7 @@
   "files": [
     "dist"
   ],
-  "main": "dist/griptape.node.js",
+  "main": "dist/griptape.js",
   "keywords": [
     "patterns",
     "pattern",
@@ -25,7 +25,7 @@
     "test-watch": "mocha-webpack --watch --reporter=min --webpack-config webpack.test.config.js \"src/**/*.js\" \"test/**/*.spec.js\"",
     "coverage": "cross-env NODE_ENV=coverage nyc --reporter=lcov --reporter=text npm run test",
     "coveralls": "npm run coverage && nyc report --reporter=text-lcov | coveralls",
-    "build": "webpack",
+    "build": "cross-env NODE_ENV=production webpack",
     "serve": "live-server --watch=build,demo --mount=/:demo --mount=/dist:dist",
     "demo": "concurrently -k -p \"[{name}]\" -n \"BUILD,HTTP\" -c \"bgMagenta,bgCyan\" \"webpack --watch\" \"npm run serve\"",
     "lint": "eslint src test"
@@ -34,9 +34,6 @@
     "include": [
       "src/**/*.js"
     ],
-    "exclude": [
-      "src/createCanvasBrowser.js"
-    ],
     "instrument": false,
     "sourceMap": false
   },
@@ -44,6 +41,7 @@
     "color-string": "^1.5.2",
     "core-js": "^2.5.3",
     "extend": "^3.0.1",
+    "is-node": "^1.0.2",
     "seed-random": "^2.2.0"
   },
   "devDependencies": {
@@ -93,5 +91,8 @@
     "url": "https://github.com/cameronhimself/griptape/issues"
   },
   "homepage": "https://github.com/cameronhimself/griptape",
-  "license": "MIT"
+  "license": "MIT",
+  "optionalDependencies": {
+    "canvas": "^1.6.9"
+  }
 }

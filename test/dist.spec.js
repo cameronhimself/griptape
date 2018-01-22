@@ -2,7 +2,7 @@
 /* eslint-env browser */
 
 const isBrowser = typeof window !== 'undefined'; // Good Enough™ for these tests
-const griptape = isBrowser ? window.griptape : require('../dist/griptape.node.js').default;
+const griptape = isBrowser ? window.griptape : require('../dist/griptape.js');
 const assert = isBrowser ? window.chai.assert : require('chai').assert;
 
 function assertIsCanvas(canvas, message) {

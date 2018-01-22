@@ -23,8 +23,4 @@ module.exports = {
 	},
 	externals: [nodeExternals()],
 	devtool: 'inline-cheap-module-source-map',
-	resolve: {
-		extensions: ['.node', '.js'],
-		alias: { createCanvas: path.resolve(__dirname, 'src', 'createCanvasServer.js') },
-	},
 };

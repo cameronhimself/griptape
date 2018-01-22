@@ -1,4 +1,4 @@
-import createCanvas from 'createCanvas';
+import createCanvas from './createCanvas';
 
 function patternWrapper({ canvas, patterns }) {
 	// Fluent layering

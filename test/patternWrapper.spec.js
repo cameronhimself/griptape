@@ -2,7 +2,7 @@
 
 import { assert } from 'chai';
 import Canvas from 'canvas';
-import createCanvas from 'createCanvas';
+import createCanvas from '../src/createCanvas';
 import patternWrapper from '../src/patternWrapper';
 
 let patterns = null;

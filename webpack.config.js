@@ -1,16 +1,21 @@
+const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
-const nodeExternals = require('webpack-node-externals');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const srcPath = path.resolve(__dirname, 'src');
 
-const baseConfig = {
+module.exports = {
+	entry: [path.resolve(srcPath, 'polyfills.js'), path.resolve(srcPath, 'griptape.js')],
 	output: {
 		path: path.resolve(__dirname, 'dist'),
+		filename: 'griptape.js',
 		publicPath: '',
 		library: 'griptape',
+		libraryExport: 'default',
+		libraryTarget: 'umd',
 	},
+	target: 'node',
+	externals: ['canvas'],
 	module: {
 		rules: [
 			{
@@ -25,45 +30,26 @@ const baseConfig = {
 			},
 		],
 	},
+	devtool: '#eval-source-map',
 };
 
-const serverConfig = merge(baseConfig, {
-	entry: path.resolve(srcPath, 'griptape.js'),
-	target: 'node',
-	externals: [nodeExternals()],
-	output: {
-		filename: 'griptape.node.js',
-		libraryTarget: 'umd',
-	},
-	module: {
-		rules: [
-			{
-				test: /\.node$/,
-				use: 'node-loader',
+if (process.env.NODE_ENV === 'production') {
+	module.exports.devtool = '#source-map';
+	// http://vue-loader.vuejs.org/en/workflow/production.html
+	module.exports.plugins = (module.exports.plugins || []).concat([
+		new webpack.DefinePlugin({
+			'process.env': {
+				NODE_ENV: '"production"',
 			},
-		],
-	},
-	resolve: {
-		extensions: ['.node', '.js'],
-		alias: { createCanvas: path.resolve(srcPath, 'createCanvasServer.js') },
-	},
-});
-
-const browserConfig = merge(baseConfig, {
-	entry: [path.resolve(srcPath, 'polyfills.js'), path.resolve(srcPath, 'griptape.js')],
-	output: {
-		filename: 'griptape.js',
-		libraryExport: 'default',
-		libraryTarget: 'window',
-	},
-	resolve: {
-		alias: { createCanvas: path.resolve(srcPath, 'createCanvasBrowser.js') },
-	},
-});
-
-const minConfig = merge(browserConfig, {
-	output: { filename: 'griptape.min.js' },
-	plugins: [new UglifyJsPlugin()],
-});
-
-module.exports = [serverConfig, browserConfig, minConfig];
+		}),
+		new webpack.optimize.UglifyJsPlugin({
+			sourceMap: true,
+			compress: {
+				warnings: false,
+			},
+		}),
+		new webpack.LoaderOptionsPlugin({
+			minimize: true,
+		}),
+	]);
+}

@@ -3,7 +3,7 @@
 import colorString from 'color-string';
 import extend from 'extend';
 import seededRandom from 'seed-random';
-import createCanvas from 'createCanvas';
+import createCanvas from './createCanvas';
 import { ellipse } from './drawing';
 
 const sanitizers = {

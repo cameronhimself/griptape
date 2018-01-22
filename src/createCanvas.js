@@ -1,7 +1,7 @@
 /* eslint-env browser */
 
 import isNode from 'is-node';
-import Canvas from 'canvas';
+import Canvas from 'canvas'; // eslint-disable-line import/extensions
 
 export default function createCanvas(width, height) {
 	if (isNode) {

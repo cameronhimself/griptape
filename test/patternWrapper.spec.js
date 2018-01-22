@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 
 import { assert } from 'chai';
-import Canvas from 'canvas';
+import Canvas from 'canvas'; // eslint-disable-line import/extensions
 import createCanvas from '../src/createCanvas';
 import patternWrapper from '../src/patternWrapper';
 

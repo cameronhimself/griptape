@@ -12,11 +12,11 @@
 import griptape from 'griptape';
 
 const pattern = griptape
-  .grid({ foreground: 'rgba(255, 0, 0, 0.5' }); // Draw a  red grid
+  .grid({ foreground: 'rgba(255, 0, 0, 0.5' }); // Draw a red grid
   .noise(); // And some subtle noise below it
 
 pattern.toDataURL(); // "data:image/png;base64..."
-pattern.toCSSURL();  // "url('data:image/png;base64...'"
+pattern.toCSSURL();  // "url('data:image/png;base64..."
 pattern.canvas;      // HTML5 canvas in browser, or an instance of node-canvas on the server.
 ```
 ```javascript
@@ -33,7 +33,7 @@ const pattern = patterns
 
 For usage server-side, this package requires [`node-canvas`](https://www.npmjs.com/package/canvas), which has has some OS-specific build requirements. Take a look at their [documentation](https://github.com/Automattic/node-canvas/wiki/_pages).
 
-For the browser, however, `node-canvas` is not required, since we'll be using the browser's native canvas. For that reason, `node-canvas` is a peer dependency--it won't be installed unless you install it explicitly. So if you only need `griptape` in the browser, `npm install griptape` is all you need to do.
+For the browser, however, `node-canvas` is not required, since we'll be using the browser's native canvas. For that reason, `node-canvas` is an optional dependency--if it bombs on install, you don't need to worry about if you only intend to use griptape in the browser.
 
 ## Patterns
 

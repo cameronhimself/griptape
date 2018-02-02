@@ -287,7 +287,7 @@ const patterns = {
 		}, optionsArg);
 		const realRandomizer = randomizer || seededRandom(seed);
 		const canvasSize = [size[0], size[1]];
-		const canvas = createCanvas(...canvasSize);
+		const canvas = createCanvas(size[0] * scale[0], size[1] * scale[1]);
 		const context = canvas.getContext('2d');
 		context.scale(scale[0], scale[1]);
 		if (background) {
@@ -325,7 +325,7 @@ const patterns = {
 		context.scale(scale[0], scale[1]);
 		if (background) {
 			context.fillStyle = background;
-			context.fillRect(1, 0, size[0], size[1]);
+			context.fillRect(0, 0, size[0], size[1]);
 		}
 
 		context.fillStyle = foreground;

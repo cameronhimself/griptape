@@ -57,15 +57,6 @@ const sanitizers = {
 	oneOf(list, fallback) {
 		return val => (list.indexOf(val) !== -1 ? val : fallback);
 	},
-	orientation(val) {
-		if (val === 'horizontal' || val === 'horiz' || val === 'h') {
-			return 'horizontal';
-		}
-		if (val === 'vertical' || val === 'vert' || val === 'v') {
-			return 'vertical';
-		}
-		return null;
-	},
 	percentageDecimal(val) {
 		const coerced = parseFloat(val);
 		if (Number.isNaN(coerced)) {
@@ -318,7 +309,7 @@ const patterns = {
 		const { foreground, background, scale, size, orientation, thickness } = sanitizeOptions({
 			size: { default: 20 },
 			thickness: { default: 10, sanitizer: sanitizers.number },
-			orientation: { default: 'vertical', sanitizer: sanitizers.orientation },
+			orientation: { default: 'vertical', sanitizer: sanitizers.oneOf('vertical', 'horizontal') },
 		}, optionsArg);
 		const canvas = createCanvas(size[0] * scale[0], size[1] * scale[1]);
 		const context = canvas.getContext('2d');
@@ -334,7 +325,8 @@ const patterns = {
 			context.fillRect(size[0] - (thickness / 2), 0, thickness, size[1]);
 		}
 		if (orientation === 'horizontal') {
-			context.fillRect(0, 0, size[0], thickness * size[1]);
+			context.fillRect(0, -(thickness / 2), size[0], thickness);
+			context.fillRect(0, size[1] - (thickness / 2), size[0], thickness);
 		}
 		context.setTransform(1, 0, 0, 1, 0, 0);
 

@@ -317,7 +317,7 @@ const patterns = {
 	stripes(optionsArg) {
 		const { foreground, background, scale, size, orientation, thickness } = sanitizeOptions({
 			size: { default: 20 },
-			thickness: { default: 0.5, sanitizer: sanitizers.percentageDecimal },
+			thickness: { default: 10, sanitizer: sanitizers.number },
 			orientation: { default: 'vertical', sanitizer: sanitizers.orientation },
 		}, optionsArg);
 		const canvas = createCanvas(size[0] * scale[0], size[1] * scale[1]);
@@ -330,10 +330,8 @@ const patterns = {
 
 		context.fillStyle = foreground;
 		if (orientation === 'vertical') {
-			const stripeWidth = thickness * size[0];
-			const gapWidth = size[0] * (1 - thickness);
-			context.fillRect(-(stripeWidth / 2), 0, stripeWidth, size[1]);
-			context.fillRect((stripeWidth / 2) + (gapWidth), 0, stripeWidth, size[1]);
+			context.fillRect(-(thickness / 2), 0, thickness, size[1]);
+			context.fillRect(size[0] - (thickness / 2), 0, thickness, size[1]);
 		}
 		if (orientation === 'horizontal') {
 			context.fillRect(0, 0, size[0], thickness * size[1]);

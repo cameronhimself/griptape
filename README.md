@@ -5,9 +5,10 @@
 [![coveralls](https://img.shields.io/coveralls/github/cameronhimself/griptape.svg)](https://coveralls.io/github/cameronhimself/griptape)
 
 > Beautiful dynamic background patterns. Inspired by [Toptal's Subtle Patterns](https://www.toptal.com/designers/subtlepatterns/).
+> View a [live demo](https://cameronhimself.github.io/griptape/).
 
 ## Example
-
+> [Live Demo](https://cameronhimself.github.io/griptape/)
 ```javascript
 import griptape from 'griptape';
 

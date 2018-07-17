@@ -90,7 +90,7 @@ Circles or squares repeated in various patterns.
 
 **dotSize**  
 >**default:** `20`  
-**validation:** `[Number, Number]` *(horizontal size, vertical size)* or `Number` *(both dimensions)* 
+**validation:** `[Number, Number]` *(horizontal size, vertical size)* or `Number` *(both dimensions)*
 
 The size of the dots.
 
@@ -143,10 +143,10 @@ A simple stripe pattern.
 The orientation of the stripes.
 
 **thickness**  
->**default:** `0.5`  
-**validation:** `Number` between `0` and `1`  
+>**default:** `1`  
+**validation:** `Number`  
 
-The thickness of each stripe as a ratio of stripe to background. For example, `0.5` will result in equal size alternating stripes, while `0.1` very narrow stripes followed by very thick background stripes.
+The thickness of each stripe in pixels.
 
 ## License
 
